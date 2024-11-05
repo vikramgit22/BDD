@@ -1,4 +1,4 @@
-package org.example.Flipkart.PageObjects;
+package Flipkart.PageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

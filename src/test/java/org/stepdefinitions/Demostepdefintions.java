@@ -4,8 +4,9 @@ import BaseDriver.BaseTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.Flipkart.PageObjects.loginPage;
+import Flipkart.PageObjects.loginPage;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 public class Demostepdefintions extends BaseTest {
@@ -33,7 +34,7 @@ public class Demostepdefintions extends BaseTest {
             throw new RuntimeException(e);
         }
         loginPage.setNumber(890987609);
-        System.out.println(loginPage.getNumber());
+        Assert.assertEquals("87",loginPage.getNumber());
     }
 
     @Then("homepage should be loaded")
