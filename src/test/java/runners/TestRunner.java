@@ -3,6 +3,8 @@ package runners;
 
 import BaseDriver.BaseTest;
 import Flipkart.listerners.TestListener;
+import Flipkart.utilities.ExtentMgr.ExtentManager;
+import io.cucumber.java.Before;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.AfterClass;
@@ -17,8 +19,13 @@ import org.testng.annotations.Parameters;
 )
 
 
-@Listeners(TestListener.class)
+//@Listeners(TestListener.class)
 public class TestRunner extends AbstractTestNGCucumberTests {
+
+    @BeforeClass
+    public static void setup() {
+        ExtentManager.createTest("Sample"); // Initialize the Extent Spark Report
+    }
 
     @Parameters("browser")
     @BeforeClass

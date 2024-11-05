@@ -38,7 +38,7 @@ public class loginPage {
 
       public String getNumber()
       {
-          return driver.findElement(enternumberormail).getText();
+          return driver.findElement(enternumberormail).getAttribute("value");
       }
 
       public void gotoHomepage()

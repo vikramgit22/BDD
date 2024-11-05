@@ -88,13 +88,32 @@
       <version>5.9.2</version>
     </dependency>
 
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>5.2.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>5.2.3</version>
+    </dependency>
+
+    <!--Extent Report-->
+    <dependency>
+      <groupId>com.aventstack</groupId>
+      <artifactId>extentreports</artifactId>
+      <version>5.0.9</version>
+    </dependency>
+
     <!-- TestNG for testing -->
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
-      <version>7.10.2</version>
+      <version>7.8.0</version>
       <scope>test</scope>
     </dependency>
+
 
 
     <!-- JUnit for backward compatibility -->
@@ -128,8 +147,4 @@
           </plugin>
       </plugins>
   </build>
-
-
-
-
 </project>
