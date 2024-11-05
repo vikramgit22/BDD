@@ -48,8 +48,10 @@ public class BaseTest {
     }
        public static void quitDriver()
         {
-            getDriver().quit();
-            webDriverThreadLocal.remove();
+            if (getDriver() != null) {
+                getDriver().quit();
+                webDriverThreadLocal.remove();
+            }
         }
 
 
