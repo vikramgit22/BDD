@@ -77,7 +77,9 @@ public class Demostepdefintions extends BaseTest {
         }
 
 
-        Assert.assertEquals(loginPage.getNumber(),"87");
+        //Assert.assertEquals(loginPage.getNumber(),"87");
+        softAssert.assertEquals(loginPage.getNumber(),"87");
+        softAssert.assertAll();
     }
 
     @Then("homepage should be loaded")
