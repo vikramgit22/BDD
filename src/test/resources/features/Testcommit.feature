@@ -1,4 +1,4 @@
-@Test_commit
+@Testcommit
 Feature: Testing latest commit to run the feature
 
   Scenario: Based on commit message feature file should run auto
