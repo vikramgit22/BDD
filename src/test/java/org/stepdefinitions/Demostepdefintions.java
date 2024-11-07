@@ -4,6 +4,7 @@ import BaseDriver.BaseTest;
 import Flipkart.utilities.ExcelUtil.ExcelAIO;
 import Flipkart.utilities.ExtentMgr.ExtentManager;
 import com.aventstack.extentreports.ExtentTest;
+import freemarker.core.Environment;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -21,13 +23,18 @@ public class Demostepdefintions extends BaseTest {
     WebDriver driver = getDriver();
     loginPage loginPage;
     ExtentTest test = ExtentManager.getTest();
-    String path="C:\\Users\\Admin\\Downloads\\Book1.xlsx";
+    //String path="C:\\Users\\Admin\\Downloads\\Book1.xlsx";
+    String fileName = "Book1.xlsx";
+    String projectDir = System.getProperty("user.dir");
+    String filePath = projectDir + File.separator + "src" + File.separator + "test" + File.separator
+            + "resources" + File.separator + "TestData" + File.separator + fileName;
+
     String sheet ="Sheet1";
     ExcelAIO excelAIO;
 
     {
         try {
-            excelAIO = new ExcelAIO(path,sheet);
+            excelAIO = new ExcelAIO(filePath,sheet);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

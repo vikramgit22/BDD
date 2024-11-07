@@ -22,8 +22,15 @@ public class baseHooks {
             WebDriver driver = BaseTest.getDriver();
             if (driver != null) {
                 //final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-                String screenshotPath = ScreenshotUtil.captureScreenshot(driver,scenario.getName());
+               /* String screenshotPath = ScreenshotUtil.captureScreenshot(driver,scenario.getName());
                 scenario.attach(screenshotPath.getBytes(), "image/png", "Failed Screenshot"); // Embed screenshot in the report
+                System.out.println("Screenshot captured and attached for: " + scenario.getName());*/
+
+                byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+
+                // Attach the screenshot directly to the scenario
+                scenario.attach(screenshot, "image/png", "Failed Screenshot");
+
                 System.out.println("Screenshot captured and attached for: " + scenario.getName());
             }
         }
