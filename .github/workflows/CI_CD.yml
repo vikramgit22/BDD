@@ -40,7 +40,7 @@ jobs:
 
       # Step 5: Run tests
       - name: Run Tests
-        run: mvn test
+        run: mvn test -Dbrowser=firefox
 
   deploy:
     name: Deploy to Server
