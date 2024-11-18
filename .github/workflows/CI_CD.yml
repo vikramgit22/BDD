@@ -34,11 +34,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-m2
 
-      # Step 4: Build the project
+      # Step 4: Clear Maven Cache (Optional: If dependencies are not properly updated)
+      - name: Clear Maven Cache (Optional)
+        run: rm -rf ~/.m2/repository
+
+      # Step 5: Print Dependency Tree (Check commons-io version)
+      - name: Check Dependency Version (commons-io)
+        run: mvn dependency:tree | grep commons-io
+
+      # Step 6: Build the project
       - name: Build with Maven
         run: mvn clean install
 
-      # Step 5: Run tests
+      # Step 7: Run tests
       - name: Run Tests
         run: mvn test -Dbrowser=firefox
 
