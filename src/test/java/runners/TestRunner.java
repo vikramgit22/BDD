@@ -15,7 +15,7 @@ import org.testng.annotations.Parameters;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"org.stepdefinitions","hooks"},
-        tags = "@Testcommit",
+        tags = "@smoke",
         plugin = {"pretty", "html:target/cucumber-reports.html"}
 
 )

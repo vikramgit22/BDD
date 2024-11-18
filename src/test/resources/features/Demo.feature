@@ -1,7 +1,7 @@
 @smoke
 Feature: Sample test to verify framework
 
-@smoke
+@positive
   Scenario: First demo testSmoke
     Given user enter URL on browser
     When clicked on enter
