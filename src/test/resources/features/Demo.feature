@@ -8,7 +8,7 @@ Feature: Sample test to verify framework
     Then homepage should be loaded
 
 
-  @Negative
+  @negative
   Scenario: First demo testReg
     Given user enter URL on browser
     When clicked on enter
